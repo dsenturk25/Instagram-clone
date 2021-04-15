@@ -1,2 +1,2 @@
 Eastagram
-Instagram's better clone made by Doğu Şentürk
+Instagram's clone made by Doğu Şentürk
