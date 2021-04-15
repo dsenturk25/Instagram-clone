@@ -1,0 +1,14 @@
+extends ./partials/head
+block content
+    .login-box
+        .login-box-title Eastagram
+        form#login-form
+            input.email-input-login#email-input(type="text" placeholder="email" required)
+            input.password-input-login#password-input(type="password" placeholder="password" required)
+            button.submit-button-login(type="submit") Log In
+        .results-login#results
+    .register-forward-box
+        .register-span Don't have an account?
+        span#register-button Sign Up
+    script
+        include ../public/js/login.js
