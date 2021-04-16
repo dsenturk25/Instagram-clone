@@ -4,7 +4,7 @@ const router = express.Router()
 const $404GetController = require("../controllers/404/get")
 
 router.get(
-    "/*", 
+    "/", 
     $404GetController
 )
 

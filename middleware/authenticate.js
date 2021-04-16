@@ -1,17 +1,22 @@
 const User = require("../db/models/user")
+const jwt = require("jsonwebtoken")
 require("dotenv").config()
 
 const authenticate = async (req, res, next) => {
     try{
-        const token = req.header("authorization").replace("Bearer ", "")
-        const user = await User.findOne({ "tokens.token": token })
-
+        const authToken = req.header("Authorization").replace("Bearer ", "")
+        const authID = jwt.verify(authToken, process.env.JWT_TOKEN)
+        const user = await User.findById(authID._id)
         if (!user) {
             throw new Error()
         }
 
-        req.user = user
-        next()
+        await user[tokens].forEach(token => {
+            if (token.token === authToken) {
+                req.session.user = user
+                next()
+            }
+        })
 
     } catch(e) {
         res.status(401).send({"error": "Please authenticate"})
