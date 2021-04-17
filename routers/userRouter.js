@@ -2,6 +2,7 @@ const express = require("express")
 const User = require("../db/models/user")
 const router = new express.Router()
 const authenticate = require("../middleware/authenticate")
+const { sendGreetingEmail } = require("../emails/account")
 require("dotenv").config()
 
 router.use(express.json())
@@ -10,6 +11,7 @@ router.post("/users", async (req, res) => {
     const user = new User(req.body)
     try {
         await user.save()
+        sendGreetingEmail(user.email, user.name)
         const token = await user.createAuthenticationToken()
         res.status(201).send({user, token})
     } catch (e) {
