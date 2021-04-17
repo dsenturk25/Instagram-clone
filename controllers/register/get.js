@@ -1,6 +1,9 @@
 module.exports = (req, res) => {
-    res.render("register", {
+    return res.render("register", {
         title: "Eastagram register",
-        css: "register"
+        page: "register",
+        includes: {
+            external: ["css", "js"]
+        }
     })
 }

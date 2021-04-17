@@ -1,6 +1,9 @@
 module.exports = (req, res) => {
-    res.render("404", {
+    return res.render("404", {
         title: "Eastagram 404",
-        css: "404"
+        page: "404",
+        includes: {
+            external: ["css", "js"]
+        }
     })
 }
