@@ -48,13 +48,7 @@ const userSchema = mongoose.Schema({
                 throw new Error("Your password is not secure.")
             }
         }
-    },
-    tokens: [{
-        token: {
-            type: String,
-            required: true
-        }
-    }]
+    }
 })
 
 userSchema.statics.loginUser = async function(email, password){
@@ -72,15 +66,6 @@ userSchema.statics.loginUser = async function(email, password){
     }
 
     return user
-}
-
-userSchema.methods.createAuthenticationToken =  async function() {
-    const user = this
-    const token = jwt.sign({_id: user._id.toString()}, process.env.JWT_TOKEN)
-    user.tokens = user.tokens.concat({token})
-    await user.save()
-
-    return token
 }
 
 userSchema.pre("save", async function(next){

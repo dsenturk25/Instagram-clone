@@ -1,5 +1,5 @@
 module.exports = (req, res) => {
-    return res.render("register", {
+    return res.render("index/register", {
         title: "Eastagram register",
         page: "register",
         includes: {

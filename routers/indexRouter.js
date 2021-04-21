@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
-const indexGetController = require("../controllers/index/get")
-const registerGetController = require("../controllers/register/get")
-const $404GetController = require("../controllers/404/get")
+const indexGetController = require("../controllers/index/index/get")
+const registerGetController = require("../controllers/index/register/get")
+const $404GetController = require("../controllers/index/notfound/get")
 
 router.get(
     "/", 

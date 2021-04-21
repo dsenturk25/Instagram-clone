@@ -17,7 +17,7 @@ window.onload = () => {
     
     $registerForm.addEventListener("submit", (e) => {
         e.preventDefault()
-        xhr.open("POST", "/users")
+        xhr.open("POST", "/user/register")
         xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
 
         xhr.send(JSON.stringify({

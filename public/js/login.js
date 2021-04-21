@@ -14,7 +14,7 @@ $registerButton.addEventListener("click", () => {
 $loginForm.addEventListener("submit", (e) => {
     e.preventDefault()
     const xhr = new XMLHttpRequest()
-    xhr.open("POST", "/users/login")
+    xhr.open("POST", "/user/login")
     xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8')
 
     xhr.send(JSON.stringify({
