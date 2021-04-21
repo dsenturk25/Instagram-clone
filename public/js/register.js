@@ -30,6 +30,7 @@ window.onload = () => {
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 201) {
+                    location.href = "/home"
                     return $results.innerHTML = "Your account has successfully created!"
                 }
                 else if (xhr.status === 400){

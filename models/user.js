@@ -1,8 +1,7 @@
 const mongoose = require("mongoose")
 const validator = require("validator")
 const bcrypt = require("bcryptjs")
-const jwt = require("jsonwebtoken")
-require("dotenv").config()
+const { sendGreetingEmail } = require("../utils/sendEmail")
 
 const userSchema = mongoose.Schema({
     username: {
@@ -50,6 +49,13 @@ const userSchema = mongoose.Schema({
         }
     }
 })
+
+userSchema.statics.createUser = async function(body) {
+    const newUser = new User(body)
+    await newUser.save()
+    sendGreetingEmail(newUser.email, newUser.name)
+    return newUser
+}
 
 userSchema.statics.loginUser = async function(email, password){
 

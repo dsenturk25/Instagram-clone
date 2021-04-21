@@ -1,5 +1,6 @@
 const express = require("express")
 const router = new express.Router()
+const isAuth = require("../middleware/isAuth")
 require("dotenv").config()
 
 const registerPostController = require("../controllers/auth/register/post")
@@ -19,7 +20,8 @@ router.post(
 )
 
 router.get(
-    "/profile", 
+    "/profile",
+    isAuth, 
     profileGetController
 )
 

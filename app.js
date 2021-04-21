@@ -2,7 +2,10 @@ const express = require('express')
 const path = require("path")
 const http = require("http")
 const mongoose = require("mongoose")
-const favicon = require('serve-favicon');
+const favicon = require('serve-favicon')
+const session = require("express-session")
+const bodyParser = require("body-parser")
+
 const indexRouter = require("./routers/indexRouter")
 const authRouter = require("./routers/authRouter")
 
@@ -20,6 +23,17 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use(favicon(path.join(__dirname, "/public/img", "icon.png")))
 
 app.use(express.json())
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}))
 
 app.use("/", indexRouter)
 app.use("/user", authRouter)

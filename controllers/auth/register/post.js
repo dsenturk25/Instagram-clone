@@ -1,12 +1,11 @@
 
 const User = require("../../../models/user")
-const { sendGreetingEmail } = require("../../../utils/sendEmail")
 
 module.exports = async (req, res) => {
-    const user = new User(req.body)
     try {
-        await user.save()
-        sendGreetingEmail(user.email, user.name)
+        const user = User.createUser(req.body)
+        req.session.userID = user._id
+        res.redirect("/home")
         res.status(201).send({user})
     } catch (e) {
         res.status(400).send(e)

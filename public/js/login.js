@@ -26,6 +26,7 @@ $loginForm.addEventListener("submit", (e) => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 $results.style.color = "green"
+                location.href = "/home"
                 return $results.innerHTML = "Successfully logged in!"
             }
             else if (xhr.status === 400) {
