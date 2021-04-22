@@ -2,4 +2,37 @@ html
     head
         include ../partials/head.pug
     body
-        h1(style="font-family: cursive; font-size: 72px; text-align: center") Eastagram
+        .all-content
+            .top-content
+                span#main-title Eastagram
+                .other-top-content
+                    input.search-input#search-input(type="search", placeholder="Search")
+                    .nav-bar
+                        i(class="fas fa-home")
+                        i(class="fab fa-telegram-plane")
+                        i(class="fas fa-user-circle")
+            .main-content
+                .post-content
+                    .each-post
+                        .post-header
+                            img(src="../img/profile1.jpeg")
+                            span burcuozberk
+                        .post-image
+                            img(src="../img/post1.jpeg")
+
+                    .each-post
+                        .post-header
+                            img(src="../img/profile1.jpeg")
+                            span burcuozberk
+                        .post-image
+                            img(src="../img/post1.jpeg")
+                .profile-content
+                    .profile-content-head
+                        img(src="../img/profile1.jpeg")
+                        .profile-content-head-writings
+                            .profile-content-username #{username}
+                            .profile-content-name #{name}
+                    hr
+                    span.profile-content-bio-info-title Bio info
+                    p.profile-content-bio-info -
+    script(src="../js/home.js")

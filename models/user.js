@@ -47,6 +47,11 @@ const userSchema = mongoose.Schema({
                 throw new Error("Your password is not secure.")
             }
         }
+    },
+    bio: {
+        type: String,
+        trim: true,
+        minlength: 0,
     }
 })
 
