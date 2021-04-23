@@ -1,0 +1,94 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+textarea{
+    font: 200 16px helvetica;
+}
+
+.all-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content{
+    width: 66%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    padding: 5% 17%;
+}
+
+.main-profile-setting{
+    width: 80%;
+    height: 140%;
+    padding: 5% 2%;
+    background-color: #ffffff;
+}
+
+.each-section{
+    width: 75%;
+    height: 8%;
+    background-color: #f0f0f0;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 25%;
+}
+
+.profile-photo{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-image: url("../img/profile1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.username{
+    margin-left: 30px;
+    font: 200 24px helvetica;
+}
+
+.all-label{
+    font: 500 18px helvetica;
+}
+
+.all-input{
+    margin-left: 30px;
+    font: 200 20px helvetica;
+}
+
+.bio-info-edit{
+    width: 500px;
+    height: 80%;
+    resize: vertical;
+    margin-right: 30px;
+}
+
+.submit-button{
+    width: 20%;
+    height: 5%;
+    background-color: rgb(0, 140, 250);
+    margin-bottom: 200px;
+    border: 0;
+    color: #ffffff;
+    font: 200 16px helvetica;
+    margin-left: 25%;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+.submit-button:hover{
+    background-color: rgb(0, 200, 255);
+}

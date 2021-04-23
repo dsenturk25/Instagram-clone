@@ -35,8 +35,8 @@ app.use(session({
     cookie: { secure: false }
 }))
 
-app.use("/", indexRouter)
 app.use("/user", authRouter)
+app.use("/", indexRouter)
 
 server.listen(port, () => {
     console.log("Listening to server on port,", port)

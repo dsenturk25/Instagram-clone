@@ -1,0 +1,38 @@
+html 
+    head 
+        include ../partials/head.pug
+        link(rel="stylesheet", href="/css/top.css")
+    body
+        .all-content
+            include ../partials/top.pug
+
+            .main-content
+                .main-profile-setting
+                    .each-section
+                        .profile-photo
+                        .username #{username}
+                    .each-section
+                        label(for="name-input").all-label Your name
+                        input(type="text", id="name-input" value=`${name}`).all-input
+                    .each-section
+                        label(for="surname-input").all-label Your surname
+                        input(type="text", id="surname-input" value=`${surname}`).all-input
+                    .each-section
+                        label(for="email-input").all-label Your email
+                        input(type="text", id="email-input" value=`${email}`).all-input
+                    .each-section
+                        label(for="bio-textarea").all-label Your bio
+                        textarea#bio-info-edit(name="bio-textarea").bio-info-edit #{bio}
+                    .each-section
+                        label(for="web-input").all-label Your website
+                        input(type="text", id="web-input" value=`${website}`).all-input
+                    .each-section
+                        label(for="gender-input").all-label Your gender
+                        select#gender-input(name="cars").all-input
+                            option(value="default") Select
+                            option(value="men") Men
+                            option(value="women") Women
+                            option(value="men") I'd rather don't specify
+                    button.submit-button#submit-button Save changes
+
+        script(src="/js/profile.js")

@@ -1,16 +1,10 @@
 html
     head
         include ../partials/head.pug
+        link(rel="stylesheet", href="/css/top.css")
     body
         .all-content
-            .top-content
-                span#main-title Eastagram
-                .other-top-content
-                    input.search-input#search-input(type="search", placeholder="Search")
-                    .nav-bar
-                        i(class="fas fa-home")
-                        i(class="fab fa-telegram-plane")
-                        i(class="fas fa-user-circle")
+            include ../partials/top.pug
             .main-content
                 .post-content
                     .each-post
@@ -26,13 +20,15 @@ html
                             span burcuozberk
                         .post-image
                             img(src="../img/post1.jpeg")
-                .profile-content
+                .profile-content#profile-content
                     .profile-content-head
                         img(src="../img/profile1.jpeg")
                         .profile-content-head-writings
                             .profile-content-username #{username}
                             .profile-content-name #{name}
                     hr
-                    span.profile-content-bio-info-title Bio info
-                    p.profile-content-bio-info -
+                    .profile-content-first-section
+                        span.profile-content-bio-info-title Bio info
+                        button.profile-bio-edit-button#bio-edit-button Edit
+                    .profile-content-bio-info#profile-content-bio-info #{bio}
     script(src="../js/home.js")

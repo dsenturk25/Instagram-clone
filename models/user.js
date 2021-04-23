@@ -17,13 +17,11 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        lowercase: true
     },
     surname: {
         type: String,
         required: true,
         trim: true,
-        lowercase: true,
     },
     email: {
         type: String,
@@ -51,7 +49,14 @@ const userSchema = mongoose.Schema({
     bio: {
         type: String,
         trim: true,
-        minlength: 0,
+    },
+    website: {
+        type: String,
+        trim: true,
+    },
+    gender: {
+        type: String,
+        trim: true,
     }
 })
 
