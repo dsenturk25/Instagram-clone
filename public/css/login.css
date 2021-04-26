@@ -10,7 +10,7 @@ body{
     height: 100%;
     margin: 0;
     background-color: #f5f5f5;
-    background-image: url("../img/login.jpeg");
+    background-image: url("../res/img/login.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }

@@ -1,4 +1,4 @@
-const User = require("../../../models/user")
+const User = require("../../../models/user/user");
 
 module.exports = async(req, res) => {
     try {
@@ -9,10 +9,10 @@ module.exports = async(req, res) => {
             bio: req.body.bio,
             website: req.body.website,
             gender: req.body.gender
-        })
-        await user.save()
-        res.send({ user })
+        });
+        await user.save();
+        res.send({ user });
     } catch (e) {
-        res.status(400).send(e)
+        res.status(400).send(e);
     }
 }

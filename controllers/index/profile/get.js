@@ -1,9 +1,9 @@
 
-const User = require("../../../models/user")
+const User = require("../../../models/user/user");
 
 module.exports = async (req, res) => {
 
-    const user = await User.findById(req.session.userID)
+    const user = await User.findById(req.session.userID);
 
     return res.render("index/profile", {
         page: "profile",
@@ -17,5 +17,5 @@ module.exports = async (req, res) => {
         bio: user.bio,
         website: user.website,
         gender: user.gender,
-    })
+    });
 }

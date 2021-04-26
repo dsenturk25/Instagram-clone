@@ -5,5 +5,5 @@ module.exports = (req, res) => {
         includes: {
             external: ["css", "js"]
         }
-    })
+    });
 }

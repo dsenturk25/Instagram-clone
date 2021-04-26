@@ -9,20 +9,20 @@ html
                 .post-content
                     .each-post
                         .post-header
-                            img(src="../img/profile1.jpeg")
+                            img(src="../res/img/profile1.jpeg")
                             span burcuozberk
                         .post-image
-                            img(src="../img/post1.jpeg")
+                            img(src="../res/img/post1.jpeg")
 
                     .each-post
                         .post-header
-                            img(src="../img/profile1.jpeg")
-                            span burcuozberk
+                            img(src="../res/img/profile1.jpeg")
+                            span natashiubuntugaga
                         .post-image
-                            img(src="../img/post1.jpeg")
+                            img(src="../res/img/post2.jpeg")
                 .profile-content#profile-content
                     .profile-content-head
-                        img(src="../img/profile1.jpeg")
+                        img(src="../res/img/profile1.jpeg")
                         .profile-content-head-writings
                             .profile-content-username #{username}
                             .profile-content-name #{name}
@@ -31,4 +31,11 @@ html
                         span.profile-content-bio-info-title Bio info
                         button.profile-bio-edit-button#bio-edit-button Edit
                     .profile-content-bio-info#profile-content-bio-info #{bio}
+                .upload-photo-content
+                    span.upload-photo-content-title Upload photos
+                    span.upload-photo-content-description The people follows you will see your photos
+                    input(type="file").upload-file-input#upload-file-input
+                    span.upload-submit-button#upload-submit-button Upload
+
     script(src="../js/home.js")
+    script(src="../js/top.js")

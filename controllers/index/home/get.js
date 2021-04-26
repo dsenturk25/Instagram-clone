@@ -1,7 +1,7 @@
-const User = require("../../../models/user")
+const User = require("../../../models/user/user");
 
 module.exports = async (req, res) => {
-    const user = await User.findById(req.session.userID)
+    const user = await User.findById(req.session.userID);
     
     return res.render("index/home", {
         title: "Eastagram Home",
@@ -12,5 +12,5 @@ module.exports = async (req, res) => {
         username: user.username,
         name: user.name,
         bio: user.bio
-    })
+    });
 }

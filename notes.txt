@@ -1,0 +1,6 @@
+views directory düzenleme
+not found ayarlaması
+
+patch deil post
+get ve post ayarla
+validate kaldır
