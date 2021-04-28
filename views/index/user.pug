@@ -1,0 +1,19 @@
+html(lang="tr")
+    head
+        include ../partials/head.pug
+        link(rel="stylesheet", href="/css/top.css")
+        script(type='text/javascript', src="/js/top.js")
+        script(type='text/javascript', src="/js/user.js")
+    body
+        .all-content#all-content
+            include ../partials/top.pug
+            .main-content
+                .user-header
+                    .user-profile-photo
+                    .user-writing-informations
+                        .user-username#user-username #{userObject.username}
+                        .user-name#user-name #{userObject.name} #{userObject.surname}
+                .user-main
+                    .user-share-amount-indicator #{userObject.sharesOfUser.length} photos shared
+                    hr
+                    .user-share-content#user-share-content

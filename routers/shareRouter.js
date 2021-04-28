@@ -8,7 +8,7 @@ const sharePostRouter = require("../controllers/share/post");
 
 const upload = multer({
     limits: {
-        fileSize: 1000000
+        fileSize: 10000000
     },
     fileFilter(req, file, cb){
         

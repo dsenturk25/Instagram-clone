@@ -1,0 +1,85 @@
+
+hr{
+    margin: 0 100px;
+    border-bottom: 1px solid #333333;
+    margin-top: 5px;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+img:hover{
+    filter: brightness(0.75);
+}
+
+.all-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+.main-content{
+    width: 66%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    padding: 5% 17%;
+    flex-direction: column;
+}
+
+.user-header{
+    width: 80%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+}
+
+.user-profile-photo{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 100%;
+    background-image: url("../res/img/profile1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0 50px 0 100px;
+}
+
+.user-username{
+    font: 400 36px helvetica;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.user-name{
+    font: 200 25px helvetica;
+    color: #00000071;
+}
+
+.user-share-amount-indicator{
+    margin-left: 100px;
+    font: 300 20px helvetica;
+    color: #333333;
+}
+
+.user-share-content{
+    width: 78.5%;
+    height: 45%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 100px;
+}
+
+.each-user-share{
+    width: 30%;
+    height: auto;
+    background-color: red;
+    margin-top: 50px;
+}

@@ -197,3 +197,14 @@ hr{
     cursor: pointer;
     border-radius: 5px;
 }
+
+.not-found-div{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 200 16px helvetica;
+    color: #333333;
+}

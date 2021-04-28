@@ -1,16 +1,20 @@
 window.onload = () => {
-
+    
     //DOM elements
     const editBioButton = document.getElementById("bio-edit-button");
     const profileContent = document.getElementById("profile-content");
     const bioInfo = document.getElementById("profile-content-bio-info");
     const fileInput = document.getElementById("upload-file-input");
-    const uploadSubmitButton = document.getElementById("upload-submit-button")
+    const uploadSubmitButton = document.getElementById("upload-submit-button");
+    const uploadPhotoContent = document.getElementById("upload-photo-content");
     
     editBioButton.addEventListener("click", () => {
 
         profileContent.style.height = "30%";
         editBioButton.setAttribute("disabled", "disabled");
+
+        uploadPhotoContent.style.marginTop = "20%"
+
         const bioEditInput = document.createElement("textarea");
         const saveButton = document.createElement("button");
 
@@ -45,7 +49,7 @@ window.onload = () => {
             }));
 
             xhr.onreadystatechange = () => {
-                if (xhr.readyState === XMLHttpRequest.DONE) {;
+                if (xhr.readyState === XMLHttpRequest.DONE) {
                     if (xhr.status === 200) {
                         alert("Bio updated");
                     } else{
@@ -53,6 +57,7 @@ window.onload = () => {
                     };
                 };
             };
+            uploadPhotoContent.style.marginTop = "200px"
         });
     });
 
