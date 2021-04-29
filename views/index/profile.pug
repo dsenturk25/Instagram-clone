@@ -2,8 +2,10 @@ html
     head 
         include ../partials/head.pug
         link(rel="stylesheet", href="/css/top.css")
+        script(src="/js/top.js")
+        script(src="/js/profile.js")
     body
-        .all-content
+        .all-content#all-content
             include ../partials/top.pug
 
             .main-content
@@ -34,5 +36,3 @@ html
                             option(value="women") Women
                             option(value="men") I'd rather don't specify
                     button.submit-button#submit-button Save changes
-
-        script(src="/js/profile.js")

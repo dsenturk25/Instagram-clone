@@ -1,6 +1,7 @@
 
 window.onload = () => {
 
+    topContentJS()
     //DOM elements
     const nameInput = document.getElementById("name-input");
     const surnameInput = document.getElementById("surname-input");

@@ -11,7 +11,9 @@ html(lang="tr")
                 .user-header
                     .user-profile-photo
                     .user-writing-informations
-                        .user-username#user-username #{userObject.username}
+                        .first-line
+                            .user-username#user-username #{userObject.username}
+                            .follow-button#follow-button #{userObject.followText}
                         .user-name#user-name #{userObject.name} #{userObject.surname}
                 .user-main
                     .user-share-amount-indicator #{userObject.sharesOfUser.length} photos shared

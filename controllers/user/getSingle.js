@@ -22,6 +22,17 @@ module.exports = async (req, res) => {
         delete userObject.__v;
         delete userObject.email;
 
+        userObject.followers.forEach(id => {
+            if (req.session.userID == id) {
+                userObject.followText = "Following";
+            } else {
+                userObject.followText = "Follow";
+            }
+        })
+        if (userObject.followers == 0) {
+            userObject.followText = "Follow";
+        } 
+        
         res.render("index/user", {
             userObject,
             page:"user",

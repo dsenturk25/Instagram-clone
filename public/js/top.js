@@ -1,5 +1,5 @@
 
-window.onload = () => {
+function topContentJS(){
 
     // DOM Elements
     let searchInput = document.getElementById("search-input");

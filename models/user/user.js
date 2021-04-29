@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const { sendGreetingEmail } = require("../../utils/sendEmail");
+const { ObjectID } = require("mongodb");
 
 const userSchema = mongoose.Schema({
     username: {
@@ -57,7 +58,17 @@ const userSchema = mongoose.Schema({
     gender: {
         type: String,
         trim: true,
-    }
+    },
+    followers: [
+        follower = {
+            type: mongoose.Schema.Types.ObjectId
+        }
+    ],
+    followings: [
+        following = {
+            type: mongoose.Schema.Types.ObjectId
+        }
+    ]
 })
 
 userSchema.statics.createUser = async function(body) {

@@ -2,26 +2,13 @@ html
     head
         include ../partials/head.pug
         link(rel="stylesheet", href="/css/top.css")
-        script(type='text/javascript', src="/js/home.js")
         script(type='text/javascript', src="/js/top.js")
+        script(type='text/javascript', src="/js/home.js")
     body
         .all-content#all-content
             include ../partials/top.pug
             .main-content
-                .post-content
-                    .each-post
-                        .post-header
-                            img(src="../res/img/profile1.jpeg")
-                            span merveyalcin
-                        .post-image
-                            img(src="../res/img/post1.jpeg")
-
-                    .each-post
-                        .post-header
-                            img(src="../res/img/profile1.jpeg")
-                            span kyonseungshawama
-                        .post-image
-                            img(src="../res/img/post2.jpeg")
+                .post-content#post-content
                 .profile-content#profile-content
                     .profile-content-head
                         img(src="../res/img/profile1.jpeg")

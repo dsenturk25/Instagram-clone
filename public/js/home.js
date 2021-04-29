@@ -1,5 +1,13 @@
+
+function toBase64(arr) {
+    //arr = new Uint8Array(arr) if it's an ArrayBuffer
+    return btoa(
+       arr.reduce((data, byte) => data + String.fromCharCode(byte), '')
+    );
+ }
+
 window.onload = () => {
-    
+    topContentJS()
     //DOM elements
     const editBioButton = document.getElementById("bio-edit-button");
     const profileContent = document.getElementById("profile-content");
@@ -7,6 +15,52 @@ window.onload = () => {
     const fileInput = document.getElementById("upload-file-input");
     const uploadSubmitButton = document.getElementById("upload-submit-button");
     const uploadPhotoContent = document.getElementById("upload-photo-content");
+    const postContent = document.getElementById("post-content")
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "/users/followings/shares");
+    xhr.send();
+
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            const sharesArray = JSON.parse(xhr.response);
+            sharesArray.forEach(shares => {
+                console.log("a")
+                const username = shares[shares.length - 1].username;
+                for (let i = 0; i < shares.length - 1; i++) {
+                    photoData = shares[i].content.data;
+                    const eachPost = document.createElement("div");
+                    eachPost.classList.add("each-post");
+
+                    const postHeader = document.createElement("div");
+                    postHeader.classList.add("post-header");
+
+                    const profilePictureDefault = document.createElement("img");
+                    profilePictureDefault.src = "../res/img/profile1.jpeg";
+
+                    const usernameSpan = document.createElement("span");
+                    usernameSpan.innerHTML = username
+
+                    postHeader.appendChild(profilePictureDefault);
+                    postHeader.appendChild(usernameSpan);
+
+                    const postImage = document.createElement("div");
+                    postImage.classList.add("post-image");
+
+                    const postImageContent = document.createElement("img")
+                    const photoBuffer = toBase64(photoData)
+                    postImageContent.src = `data:image/png;base64,${photoBuffer}`;
+
+                    postImage.appendChild(postImageContent);
+                    
+                    eachPost.appendChild(postHeader);
+                    eachPost.appendChild(postImage);
+
+                    postContent.appendChild(eachPost);
+                }
+            })
+        }
+    }
     
     editBioButton.addEventListener("click", () => {
 

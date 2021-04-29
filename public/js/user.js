@@ -7,11 +7,17 @@ function toBase64(arr) {
  }
 
 window.onload = () => {
-
+    
+    topContentJS()
     // DOM Element
     const userShareContent = document.getElementById("user-share-content");
     const username = document.getElementById("user-username").innerHTML;
     const name = document.getElementById("user-name").innerHTML.split(" ")[0];
+    const followButton = document.getElementById("follow-button")
+
+    if (followButton.innerHTML === "Following") {
+        followButton.style.pointerEvents = "none";
+    }
 
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "/users/shares");
@@ -26,7 +32,7 @@ window.onload = () => {
             if (xhr.status === 200) {
                 const userShareArray = JSON.parse(xhr.response);
                 userShareArray.forEach(share => {
-
+                
                     const eachUserShare = document.createElement("div");
                     eachUserShare.classList.add("each-user-share")
 
@@ -40,4 +46,24 @@ window.onload = () => {
             }
         }
     }
+    followButton.addEventListener("click", () => {
+        xhr.open("POST", "/users/following/add");
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+        xhr.send(JSON.stringify({
+            username: username,
+            name: name
+        }));
+
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    followButton.style.backgroundColor = "rgb(0, 100, 200)";
+                    followButton.innerHTML = "Following";
+                }
+                else if (xhr.status === 400 || xhr.response === "same_user") {
+                    alert("You can't follow yourself");
+                }
+            }
+        }
+    })
 }
