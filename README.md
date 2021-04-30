@@ -1,3 +1,3 @@
 Eastagram
-Instagram's clone made by Doğu Şentürk
-Not yet done.
+
+Instagram's better web-app clone developed by Doğu Şentürk.
